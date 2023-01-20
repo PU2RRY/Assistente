@@ -183,7 +183,7 @@ if %_erl%==11 goto Menu2
 	cls
 	title ASSISTENTE DO DIGUINHO
 	cls
-	color 2
+	color 3
 echo:
 echo:        Data: %data%
 echo:
