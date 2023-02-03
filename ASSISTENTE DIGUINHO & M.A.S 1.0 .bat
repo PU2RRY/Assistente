@@ -39,7 +39,7 @@ popd
 
 cls
 
-title ASSISTENTE DO DIGUINHO
+title ASSISTENTE DO DIGUINHO 1.0
 
 set _elev=
 if /i "%~1"=="-el" set _elev=1
