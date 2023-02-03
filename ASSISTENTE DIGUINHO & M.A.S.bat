@@ -183,7 +183,7 @@ if %_erl%==11 goto Menu2
 	cls
 	title ASSISTENTE DO DIGUINHO
 	cls
-	color 3
+	color 2
 echo:
 echo:        Data: %data%
 echo:
@@ -203,7 +203,7 @@ echo:             [3] DELETA TXT Vicomerce\imp
 echo:                                                                     
 echo:             [4] ATIVAR RECURSOS DO WINDOWS
 echo:
-echo:             [5]  
+echo:             [5] EXTRAIR TXT APPs INSTALADOS 
 echo:  
 echo:             [6] 
 echo:
@@ -315,7 +315,7 @@ if %_erl%==11 goto MainMenu
 	:opcao9
 		cls
 
-		start explorer.exe C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+		start shell:startup
 
 		pause 
 		goto MainMenu
@@ -348,7 +348,7 @@ if %_erl%==11 goto MainMenu
 		if %_erl%== 3 goto Menu2
 
 		:deletar
-		del C:\Vicommerce\TempSAT\Imp 
+		del "C:\Vicommerce\TempSAT\Imp\*.txt"
 		echo.
 		echo OK arquivos foram deletatos 
 		echo.
@@ -376,7 +376,7 @@ if %_erl%==11 goto MainMenu
 		if %_erl%== 3 goto Menu2
 
 		:deletar
-		del TestFile C:\Vicommerce\Imp 
+		del "C:\Vicommerce\Imp\*.txt"
 		echo.
 		echo OK arquivos foram deletatos 
 		echo.
@@ -402,8 +402,9 @@ if %_erl%==11 goto MainMenu
 	:op5
 		cls
 		echo.
+		wmic product get name > C:\Users\%username%\Desktop\Aplicativos.txt
 		echo.
-		echo OP 5 MENU2
+		echo Verifique o arquivo gerado. 
 		pause
 		goto Menu2
 
